@@ -129,10 +129,11 @@ const Home = () => {
             >
                 <div>
                     <div className="w-[64px] h-[64px] mb-[16px] flex items-center justify-center rounded-full bg-[#FFFFFF33] backdrop-blur-[16px]">
-                        <img src={iconUrl} alt="Snive Logo" className="w-[2rem] h-[2rem] object-contain" />
+                        <img src={`${icons[iconUrl]}`} alt="Snive Logo" className="w-[2.5rem] h-[2.5rem] object-contain" />
                     </div>
 
 
+                  
                     <h2 className="text-[18px] font-[400] text-left leading-[1.25] mb-[12px]">{title}</h2>
 
                     <div className="flex flex-wrap items-center justify-center gap-[3px]">
@@ -422,7 +423,7 @@ const Home = () => {
                             // removed bg-[#1E1E1E] here because ServiceCard already has background color
                             >
                                 <ServiceCard
-                                    iconUrl={icons[service.iconKey]}
+                                    iconUrl={service.iconUrl}
                                     title={service.title}
                                     tags={service.tags}
                                     bg={service.bg}

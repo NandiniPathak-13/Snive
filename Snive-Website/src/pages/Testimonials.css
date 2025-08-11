@@ -1,6 +1,6 @@
 .testimonial-container {
   position: relative;
-  height: 300px; /* fixed height */
+  height: 400px; 
   overflow: hidden;
 }
 
@@ -8,9 +8,8 @@
   display: flex;
   flex-direction: column;
   gap: 24px;
-  /* height depends on number of testimonials */
-  /* animation will move this entire div up */
-  animation: scroll-up 20s linear infinite;
+
+  animation: scroll-up 5s linear infinite;
 }
 
 @keyframes scroll-up {
@@ -18,7 +17,7 @@
     transform: translateY(0);
   }
   100% {
-    /* move up by half of the total height to cover one full list */
+   
     transform: translateY(-50%);
   }
 }
