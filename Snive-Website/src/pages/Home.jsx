@@ -18,13 +18,13 @@ import { MdVideoCall } from 'react-icons/md';
 import "./Testimonials.css";
 import { HiMiniSpeakerWave } from 'react-icons/hi2';
 import { FaPaperPlane } from "react-icons/fa";
-import axios from 'axios';
+
 import { FaCheckCircle } from 'react-icons/fa';
 import { FaSquareInstagram } from 'react-icons/fa6';
 import { FaSquareYoutube } from 'react-icons/fa6';
 import { FaFacebookSquare } from 'react-icons/fa';
 import { FaLinkedin } from 'react-icons/fa6';
-import { FaSquareFull } from 'react-icons/fa';
+
 
 const Home = () => {
     const [activeTab, setActiveTab] = useState('framework');
@@ -42,7 +42,7 @@ const Home = () => {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        fetch('http://localhost:3000/services') // tumhare db.json ka endpoint
+        fetch('http://localhost:3000/services') 
             .then((res) => res.json())
             .then((data) => {
                 setServices(data);
@@ -110,7 +110,6 @@ const Home = () => {
                 className={`${bgColors[bg]}  rounded-[16px] p-[32px] text-[#FFFFFF] flex flex-col justify-between h-[320px] shadow-[0_10px_15px_rgba(0,0,0,0.1)]`}
             >
                 <div>
-                    {/* Icon */}
                     <div className="w-[64px] h-[64px] mb-[16px] flex items-center justify-center rounded-full bg-[#FFFFFF33] backdrop-blur-[16px]">
                         <img src={iconUrl} alt={title} className="w-10 h-10 object-contain" />
                     </div>
@@ -131,7 +130,7 @@ const Home = () => {
                     </div>
                 </div>
 
-                {/* Button */}
+             
                 <button className="mt-[16px] px-[20px] py-[0.5rem] bg-gradient-to-r from-[#A855F7] to-[#3B82F6] rounded-full text-sm font-semibold hover:opacity-90 transition-all">
                     KNOW MORE →
                 </button>
@@ -565,7 +564,7 @@ const Home = () => {
             </div>
 
             <div className="eleventh bg-[#0A0A0A] text-white px-[2rem] py-[3rem]">
-                {/* Top section */}
+               
                 <div className="flex lg:flex-row ml-[40px] lg:justify-between lg:items-center gap-[1.5rem]  pb-[2rem]">
                     <div className='basis-[60%]'>
                         <h2 className="text-[1.5rem] font-[600]">Get notified when we launch</h2>
@@ -602,7 +601,7 @@ const Home = () => {
                     </div>
                     <div className='basis-[70%]'>
                         <div className="flex flex-wrap mt-[5px] gap-[2rem]">
-                            {/* PRODUCTS */}
+                           
                             <div>
                                 <h4 className="font-[400]  mb-[1.75rem]">PRODUCTS</h4>
                                 <ul className="flex flex-col gap-[1rem] ml-[14px] text-[#A3A3A3] text-[14px]">
@@ -611,7 +610,7 @@ const Home = () => {
                                 </ul>
                             </div>
 
-                            {/* SOLUTION */}
+                          
                             <div>
                                 <h4 className="font-[400] mb-[1.75rem]">SOLUTION</h4>
                                 <ul className="flex flex-col gap-[1rem] ml-[14px] text-[#A3A3A3] text-[14px]">
@@ -620,7 +619,7 @@ const Home = () => {
                                 </ul>
                             </div>
 
-                            {/* COMPANY */}
+                  
                             <div>
                                 <h4 className="font-[400] mb-[1.75rem]">COMPANY</h4>
                                 <ul className="flex flex-col gap-[1rem] ml-[14px] text-[#A3A3A3] text-[14px]">
@@ -631,7 +630,7 @@ const Home = () => {
                                 </ul>
                             </div>
 
-                            {/* RESOURCE */}
+                       
                             <div>
                                 <h4 className="font-[400] mb-[1.75rem]">RESOURCE</h4>
                                 <ul className="flex flex-col gap-[1rem] ml-[14px] text-[#A3A3A3] text-[14px]">
@@ -639,7 +638,7 @@ const Home = () => {
                                 </ul>
                             </div>
 
-                            {/* PRICING */}
+                        
                             <div>
                                 <h4 className="font-[400] mb-[1.75rem]">PRICING</h4>
                                 <ul className="flex flex-col gap-[1rem] ml-[14px] text-[#A3A3A3] text-[14px]">
@@ -649,7 +648,7 @@ const Home = () => {
                                 </ul>
                             </div>
 
-                            {/* PLATFORM */}
+                         
                             <div>
                                 <h4 className="font-[400] mb-[1.75rem]">PLATFORM</h4>
                                 <ul className="flex flex-col gap-[1rem] ml-[14px] text-[#A3A3A3] text-[14px]">
@@ -666,7 +665,7 @@ const Home = () => {
 
 
 
-                {/* Bottom section */}
+             
                 <div className="mt-[2.5rem] ml-[65rem] flex gap-[1rem]  text-xl">
                     <a href="#"><FaSquareInstagram size={25} color='white' /></a>
                     <a href="#"><FaFacebookSquare size={25} color='white' /></a>
