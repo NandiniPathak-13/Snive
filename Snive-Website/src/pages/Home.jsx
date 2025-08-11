@@ -13,7 +13,8 @@ import web from '../assets/web.png';
 import search from '../assets/search.png';
 import screen from '../assets/screen.png';
 import dott from '../assets/dotted graph.png';
-
+import iso from '../assets/isometric.png';
+import AI from '../assets/AiGIF.png';
 import { BiPlay } from 'react-icons/bi';
 import { BsStars } from 'react-icons/bs';
 import { FaEnvelope, FaInfoCircle } from 'react-icons/fa';
@@ -133,10 +134,10 @@ const Home = () => {
                     </div>
 
 
-                  
-                    <h2 className="text-[18px] font-[400] text-left leading-[1.25] mb-[12px]">{title}</h2>
-
-                    <div className="flex flex-wrap items-center justify-center gap-[3px]">
+                    <div className='h-[40px]'>
+                        <h2 className="text-[18px] font-[400]  text-left leading-[1.25] mb-[12px]">{title}</h2>
+                    </div>
+                    <div className="flex flex-wrap mt-[15px] items-center justify-center gap-[3px]">
                         {tags.map((tag) => (
                             <span
                                 key={tag}
@@ -148,7 +149,7 @@ const Home = () => {
                     </div>
                 </div>
 
-                <button className="absolute mt-[13rem] bg-gradient-to-r from-[#A855F7] to-[#3B82F6] text-[10px] px-4 py-1 rounded-full font-normal hover:opacity-90 transition-all">
+                <button className="absolute mt-[13rem] bg-gradient-to-r from-[#A855F7] to-[#3B82F6]  text-[10px] px-[4px] py-[2px] rounded-full font-normal hover:opacity-90 transition-all">
                     KNOW MORE →
                 </button>
             </div>
@@ -193,7 +194,8 @@ const Home = () => {
                     </div>
 
                     <div className="flex-1 flex justify-center items-center pt-8">
-                        <img className='w-[90%] max-w-[500px]' src="/snive-diagram.png" alt="Nexa AI Architecture" />
+                        <img className='w-[90%] max-w-[500px]' src={iso} alt="Nexa AI Architecture" />
+
                     </div>
                 </section>
 
@@ -216,7 +218,7 @@ const Home = () => {
 
                 <h1 className="font-[400] items-center mt-[30px] text-[3rem] px-[250px] mb-[100px] left-align">AI Driven Solution for Modern Enterprise</h1>
 
-                <div className="basis-[60%] min-h-[10rem]">
+                <div className="basis-[55%] ">
                     <div className="tabtitles">
                         <p
                             className={`tab ${activeTab === 'framework' ? 'activetab' : ''}`}
@@ -240,23 +242,23 @@ const Home = () => {
 
                     <div className={`tab-content ${activeTab === 'framework' ? 'active-content' : ''}`}>
                         <h1 className="left-align">Tailored AI <span>Framework</span></h1>
-                        <p className="left-align">Snive creates bespoke AI models, aligning with business needs and data landscape for a harmonious tech-business fusion.</p>
+                        <p className="left-align ">Snive creates bespoke AI models, aligning with <br /> business needs and data landscape for a harmonious <br /> tech-business fusion.</p>
                     </div>
 
                     <div className={`tab-content ${activeTab === 'collaboration' ? 'active-content' : ''}`}>
                         <h1 className="left-align">Tailored AI <span>Collaboration</span></h1>
-                        <p className="left-align">Snive creates bespoke AI models, aligning with business needs and data landscape for a harmonious tech-business fusion.</p>
+                        <p className="left-align">Snive creates bespoke AI models, aligning with <br /> business needs and data landscape for a harmonious <br /> tech-business fusion.</p>
                     </div>
 
                     <div className={`tab-content ${activeTab === 'infusion' ? 'active-content' : ''}`}>
                         <h1 className="left-align">Tailored AI <span>Infusion</span></h1>
-                        <p className="left-align">Snive creates bespoke AI models, aligning with business needs and data landscape for a harmonious tech-business fusion.</p>
+                        <p className="left-align">Snive creates bespoke AI models, aligning with <br /> business needs and data landscape for a harmonious <br /> tech-business fusion.</p>
                     </div>
                 </div>
 
-                <div className="basis-[35%] min-h-[10rem]">
-                    {/* image lgaani hai */}
+                <div className="basis-[35%] ml-[500px] min-h-[10rem]">
 
+                    <img src={AI} alt="Loading..." className='h-[400px] w-[600px] mt-[-250px]' />
                 </div>
             </div>
 
@@ -280,7 +282,7 @@ const Home = () => {
 
                             </div>
                             <div>
-                               <img src={dott} alt="Snive Logo" className=" ml-[40px] h-[250px] w-[400px]" />
+                                <img src={dott} alt="Snive Logo" className=" ml-[40px] h-[250px] w-[400px]" />
                             </div>
 
                         </div>
@@ -418,7 +420,7 @@ const Home = () => {
                             <div
                                 key={service.id}
                                 className="p-[24px] rounded-lg w-[300px] shadow-lg"
-                            // removed bg-[#1E1E1E] here because ServiceCard already has background color
+
                             >
                                 <ServiceCard
                                     iconUrl={service.iconUrl}
@@ -568,7 +570,7 @@ const Home = () => {
                 </div>
 
 
-                
+
 
 
 
