@@ -1,8 +1,24 @@
-@keyframes verticalScroll {
-  0% { transform: translateY(0); }
-  100% { transform: translateY(-50%); } /* Half height tak hi scroll */
+.testimonial-container {
+  position: relative;
+  height: 300px; /* fixed height */
+  overflow: hidden;
 }
 
-.vertical-scroll {
-  animation: verticalScroll 15s linear infinite;
+.testimonial-scroll {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  /* height depends on number of testimonials */
+  /* animation will move this entire div up */
+  animation: scroll-up 20s linear infinite;
+}
+
+@keyframes scroll-up {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    /* move up by half of the total height to cover one full list */
+    transform: translateY(-50%);
+  }
 }

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import "../index.css";
 
 
@@ -40,6 +40,8 @@ const Home = () => {
         setActiveTab(tabName);
     };
 
+
+
     const handleScrollClick = () => {
         const section = document.querySelector('.second-container');
         section?.scrollIntoView({ behavior: 'smooth' });
@@ -62,7 +64,7 @@ const Home = () => {
     }, []);
     const bgColors = {
         purple: "bg-[#A855F7]",
-        black: "bg-[#000000]"
+        black: "bg-[#121212]"
     };
 
     const icons = {
@@ -130,7 +132,7 @@ const Home = () => {
                         <img src={iconUrl} alt="Snive Logo" className="w-[2rem] h-[2rem] object-contain" />
                     </div>
 
-                
+
                     <h2 className="text-[18px] font-[400] text-left leading-[1.25] mb-[12px]">{title}</h2>
 
                     <div className="flex flex-wrap items-center justify-center gap-[3px]">
@@ -405,16 +407,14 @@ const Home = () => {
                 <h1 className="text-4xl md:text-5xl mt-[20px] font-semibold text-white">
                     Sky Rocket Your Business With
                 </h1>
-                <h2 className=" gradient-text text-4xl md:text-5xl font-bold mt-[20px]  bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400 mt-2">
-                    Nexa AI
-                </h2>
+                <span className="bg-gradient-to-r from-[#ff00cc] text-[40px] to-[#3333ff] bg-clip-text text-transparent font-[400]">Nexa AI</span>
 
 
 
                 {loading ? (
                     <div className="text-center text-lg font-medium text-white">Loading...</div>
                 ) : (
-                    <div className="min-h-screen flex flex-wrap gap-[24px] justify-center items-center p-[2.5rem] bg-[#121212]">
+                    <div className="min-h-screen flex flex-wrap gap-[24px] justify-center items-center p-[2.5rem] ">
                         {services.map((service) => (
                             <div
                                 key={service.id}
@@ -543,46 +543,33 @@ const Home = () => {
                     Voice Behind Our Vision
                 </h2>
 
-                <div className=' flex'>
-                    <div className=" min-h-screen flex flex-wrap gap-[24px] justify-center items-center p-[2.5rem]">
-                        {testimonials.map((t, index) => (
-                            <div
-                                key={index}
-                                className="bg-[#1E1E1E] animate-scroll  p-[24px] rounded-lg w-[300px] shadow-lg"
-                            >
-                                <div className="flex items-center gap-[12px] mb-[12px]">
-                                    <FaUserCircle className="text-[#FF6B6B] text-[30px]" />
-                                    <h3 className="text-white font-bold">{t.name}</h3>
+
+
+                <div className='testimonial-container relative h-[800px] pb-[90px] overflow-hidden'>
+                    <div className='testimonial-scroll mb-[90px] flex animate-scroll-up'>
+                        <div className="  flex flex-wrap gap-[24px] justify-center items-center p-[2.5rem]">
+                            {testimonials.map((t, index) => (
+                                <div
+                                    key={index}
+                                    className="bg-[#1E1E1E] animate-scroll  p-[24px] rounded-lg w-[300px] shadow-lg"
+                                >
+                                    <div className="flex items-center gap-[12px] mb-[2px]">
+                                        <FaUserCircle className="text-[#FF6B6B] text-[30px]" />
+                                        <h3 className="text-white font-bold">{t.name}</h3>
+                                    </div>
+                                    <p className="text-[#CCCCCC]">{t.text}</p>
+                                    <StarRating rating={t.rating} />
                                 </div>
-                                <p className="text-[#CCCCCC]">{t.text}</p>
-                                <StarRating rating={t.rating} />
-                            </div>
-                        ))}
+                            ))}
+                        </div>
+
                     </div>
 
 
                 </div>
 
 
-                <div className=' flex'>
-                    <div className=" min-h-screen flex flex-wrap gap-[24px] justify-center items-center p-[2.5rem]">
-                        {testimonials.map((t, index) => (
-                            <div
-                                key={index}
-                                className="bg-[#1E1E1E] animate-scroll  p-[24px] rounded-lg w-[300px] shadow-lg"
-                            >
-                                <div className="flex items-center gap-[12px] mb-[12px]">
-                                    <FaUserCircle className="text-[#FF6B6B] text-[30px]" />
-                                    <h3 className="text-white font-bold">{t.name}</h3>
-                                </div>
-                                <p className="text-[#CCCCCC]">{t.text}</p>
-                                <StarRating rating={t.rating} />
-                            </div>
-                        ))}
-                    </div>
-
-
-                </div>
+                
 
 
 
