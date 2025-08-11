@@ -516,13 +516,7 @@
   background-color: #0056b3;
 }
 
-.services {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 columns */
-  gap: 20px; /* space between cards */
-  max-width: 1200px;
-  margin: auto; /* center */
-}
+
 
 .h44 {
   background: linear-gradient(to right, #3a146c, #ffffff);

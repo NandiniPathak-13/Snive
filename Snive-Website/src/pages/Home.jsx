@@ -6,6 +6,13 @@ import './Home.css';
 import { FaArrowDown } from 'react-icons/fa';
 import logo from '../assets/Logo.png';
 import head from '../assets/head.png';
+import graph from '../assets/graph.png';
+import graph2 from '../assets/graph2.png';
+import speaker from '../assets/speaker.png';
+import web from '../assets/web.png';
+import search from '../assets/search.png';
+import screen from '../assets/screen.png';
+
 
 import { BiPlay } from 'react-icons/bi';
 import { BsStars } from 'react-icons/bs';
@@ -42,7 +49,7 @@ const Home = () => {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        fetch('http://localhost:3000/services') 
+        fetch('http://localhost:3000/services')
             .then((res) => res.json())
             .then((data) => {
                 setServices(data);
@@ -56,6 +63,15 @@ const Home = () => {
     const bgColors = {
         purple: "bg-[#A855F7]",
         black: "bg-[#000000]"
+    };
+
+    const icons = {
+        graph,
+        graph2,
+        speaker,
+        web,
+        search,
+        screen,
     };
     const testimonials = [
         {
@@ -107,22 +123,21 @@ const Home = () => {
     const ServiceCard = ({ title, tags, iconUrl, bg }) => {
         return (
             <div
-                className={`${bgColors[bg]}  rounded-[16px] p-[32px] text-[#FFFFFF] flex flex-col justify-between h-[320px] shadow-[0_10px_15px_rgba(0,0,0,0.1)]`}
+                className={`${bgColors[bg]} rounded-[16px] p-[32px] text-[#FFFFFF] flex flex-col justify-between  w-[280px] h-[280px] shadow-[0_10px_15px_rgba(0,0,0,0.1)]`}
             >
                 <div>
                     <div className="w-[64px] h-[64px] mb-[16px] flex items-center justify-center rounded-full bg-[#FFFFFF33] backdrop-blur-[16px]">
-                        <img src={iconUrl} alt={title} className="w-10 h-10 object-contain" />
+                        <img src={iconUrl} alt="Snive Logo" className="w-[2rem] h-[2rem] object-contain" />
                     </div>
 
-                    {/* Title */}
-                    <h2 className="text-[20px] font-[600] leading-[1.25] mb-[12px]">{title}</h2>
+                
+                    <h2 className="text-[18px] font-[400] text-left leading-[1.25] mb-[12px]">{title}</h2>
 
-                    {/* Tags */}
-                    <div className="flex flex-wrap gap-[8px]">
-                        {tags.map((tag, idx) => (
+                    <div className="flex flex-wrap items-center justify-center gap-[3px]">
+                        {tags.map((tag) => (
                             <span
-                                key={idx}
-                                className="bg-[#FFFFFF] text-[#000000] text-sm px-[12px] py-[4px] rounded-full"
+                                key={tag}
+                                className="bg-[#FFFFFF] text-[#000000] mt-[10px] text-[6px] px-[5px] py-[2px] rounded-[2px] "
                             >
                                 {tag}
                             </span>
@@ -130,13 +145,13 @@ const Home = () => {
                     </div>
                 </div>
 
-             
-                <button className="mt-[16px] px-[20px] py-[0.5rem] bg-gradient-to-r from-[#A855F7] to-[#3B82F6] rounded-full text-sm font-semibold hover:opacity-90 transition-all">
+                <button className="absolute mt-[13rem] bg-gradient-to-r from-[#A855F7] to-[#3B82F6] text-[10px] px-4 py-1 rounded-full font-normal hover:opacity-90 transition-all">
                     KNOW MORE →
                 </button>
             </div>
         );
     };
+
 
 
 
@@ -399,14 +414,15 @@ const Home = () => {
                 {loading ? (
                     <div className="text-center text-lg font-medium text-white">Loading...</div>
                 ) : (
-                    <div className="min-h-screen flex flex-wrap gap-[24px] justify-center items-center p-[2.5rem]">
+                    <div className="min-h-screen flex flex-wrap gap-[24px] justify-center items-center p-[2.5rem] bg-[#121212]">
                         {services.map((service) => (
                             <div
                                 key={service.id}
-                                className="bg-[#1E1E1E] p-[24px] rounded-lg w-[300px] shadow-lg"
+                                className="p-[24px] rounded-lg w-[300px] shadow-lg"
+                            // removed bg-[#1E1E1E] here because ServiceCard already has background color
                             >
                                 <ServiceCard
-                                    iconUrl={service.iconUrl}
+                                    iconUrl={icons[service.iconKey]}
                                     title={service.title}
                                     tags={service.tags}
                                     bg={service.bg}
@@ -485,24 +501,24 @@ const Home = () => {
                         Measuring Tomorrow, Today.
                     </h2>
 
-                    <div className="flex flex-wrap gap-[8rem] m-[8rem] mt-[-20px] text-white text-sm font-medium ">
+                    <div className="flex flex-wrap gap-[7rem] m-[8rem] mt-[-20px] text-white text-sm font-medium ">
                         <div className='flex mt-[5rem] '>
-                            <div className='basis-1/3 m'>
+                            <div className='basis-1/3 ml-[4rem]'>
                                 <p className="text-[4rem] text-left font-[500] ">77%</p>
                                 <p className=" mr-[4rem] font-[2rem] text-left text-lg">Experience unparalleled cost savings with our innovative approach.</p>
                             </div>
 
-                            <div className='basis-1/3 '>
+                            <div className='basis-1/3 ml-[4rem] '>
                                 <p className="text-[4rem] text-left font-[500] ">25%</p>
                                 <p className="text-left mr-[4rem]  text-lg">Maximize revenue through personalized strategies and recommendations.</p>
                             </div>
 
-                            <div className='basis-1/3 '>
+                            <div className='basis-1/3 ml-[4rem] '>
                                 <p className="text-[4rem]  text-left font-[500] ">21%</p>
                                 <p className="text-left  text-lg">Elevate brand visibility for enhanced discovery and engagement.</p>
                             </div>
                         </div>
-                        <div className='flex mt-[4rem]'>
+                        <div className='flex ml-[12em] mt-[4rem]'>
                             <div className='basis-1/2'>
                                 <p className="text-[4rem] text-left font-[500] ">81%</p>
                                 <p className="text-left mr-[9rem]  text-lg">Supercharge your edge with streamlined AI solutions, evident in our substantial GTM time reduction.</p>
@@ -546,6 +562,30 @@ const Home = () => {
 
 
                 </div>
+
+
+                <div className=' flex'>
+                    <div className=" min-h-screen flex flex-wrap gap-[24px] justify-center items-center p-[2.5rem]">
+                        {testimonials.map((t, index) => (
+                            <div
+                                key={index}
+                                className="bg-[#1E1E1E] animate-scroll  p-[24px] rounded-lg w-[300px] shadow-lg"
+                            >
+                                <div className="flex items-center gap-[12px] mb-[12px]">
+                                    <FaUserCircle className="text-[#FF6B6B] text-[30px]" />
+                                    <h3 className="text-white font-bold">{t.name}</h3>
+                                </div>
+                                <p className="text-[#CCCCCC]">{t.text}</p>
+                                <StarRating rating={t.rating} />
+                            </div>
+                        ))}
+                    </div>
+
+
+                </div>
+
+
+
             </div>
 
             <div className="tenth-container">
@@ -564,7 +604,7 @@ const Home = () => {
             </div>
 
             <div className="eleventh bg-[#0A0A0A] text-white px-[2rem] py-[3rem]">
-               
+
                 <div className="flex lg:flex-row ml-[40px] lg:justify-between lg:items-center gap-[1.5rem]  pb-[2rem]">
                     <div className='basis-[60%]'>
                         <h2 className="text-[1.5rem] font-[600]">Get notified when we launch</h2>
@@ -601,7 +641,7 @@ const Home = () => {
                     </div>
                     <div className='basis-[70%]'>
                         <div className="flex flex-wrap mt-[5px] gap-[2rem]">
-                           
+
                             <div>
                                 <h4 className="font-[400]  mb-[1.75rem]">PRODUCTS</h4>
                                 <ul className="flex flex-col gap-[1rem] ml-[14px] text-[#A3A3A3] text-[14px]">
@@ -610,7 +650,7 @@ const Home = () => {
                                 </ul>
                             </div>
 
-                          
+
                             <div>
                                 <h4 className="font-[400] mb-[1.75rem]">SOLUTION</h4>
                                 <ul className="flex flex-col gap-[1rem] ml-[14px] text-[#A3A3A3] text-[14px]">
@@ -619,7 +659,7 @@ const Home = () => {
                                 </ul>
                             </div>
 
-                  
+
                             <div>
                                 <h4 className="font-[400] mb-[1.75rem]">COMPANY</h4>
                                 <ul className="flex flex-col gap-[1rem] ml-[14px] text-[#A3A3A3] text-[14px]">
@@ -630,7 +670,7 @@ const Home = () => {
                                 </ul>
                             </div>
 
-                       
+
                             <div>
                                 <h4 className="font-[400] mb-[1.75rem]">RESOURCE</h4>
                                 <ul className="flex flex-col gap-[1rem] ml-[14px] text-[#A3A3A3] text-[14px]">
@@ -638,7 +678,7 @@ const Home = () => {
                                 </ul>
                             </div>
 
-                        
+
                             <div>
                                 <h4 className="font-[400] mb-[1.75rem]">PRICING</h4>
                                 <ul className="flex flex-col gap-[1rem] ml-[14px] text-[#A3A3A3] text-[14px]">
@@ -648,7 +688,7 @@ const Home = () => {
                                 </ul>
                             </div>
 
-                         
+
                             <div>
                                 <h4 className="font-[400] mb-[1.75rem]">PLATFORM</h4>
                                 <ul className="flex flex-col gap-[1rem] ml-[14px] text-[#A3A3A3] text-[14px]">
@@ -665,7 +705,7 @@ const Home = () => {
 
 
 
-             
+
                 <div className="mt-[2.5rem] ml-[65rem] flex gap-[1rem]  text-xl">
                     <a href="#"><FaSquareInstagram size={25} color='white' /></a>
                     <a href="#"><FaFacebookSquare size={25} color='white' /></a>
