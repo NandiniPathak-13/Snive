@@ -12,7 +12,7 @@ import speaker from '../assets/speaker.png';
 import web from '../assets/web.png';
 import search from '../assets/search.png';
 import screen from '../assets/screen.png';
-
+import dott from '../assets/dotted graph.png';
 
 import { BiPlay } from 'react-icons/bi';
 import { BsStars } from 'react-icons/bs';
@@ -279,6 +279,9 @@ const Home = () => {
                                 <FaCircle size={10} color='green' />
 
 
+                            </div>
+                            <div>
+                               <img src={dott} alt="Snive Logo" className=" ml-[40px] h-[250px] w-[400px]" />
                             </div>
 
 
