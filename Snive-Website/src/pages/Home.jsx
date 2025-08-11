@@ -278,15 +278,10 @@ const Home = () => {
                                 <FaCircle size={10} color='yellow' />
                                 <FaCircle size={10} color='green' />
 
-
                             </div>
                             <div>
                                <img src={dott} alt="Snive Logo" className=" ml-[40px] h-[250px] w-[400px]" />
                             </div>
-
-
-
-
 
                         </div>
 
