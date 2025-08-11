@@ -1,0 +1,8 @@
+@keyframes verticalScroll {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-50%); } /* Half height tak hi scroll */
+}
+
+.vertical-scroll {
+  animation: verticalScroll 15s linear infinite;
+}

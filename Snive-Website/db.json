@@ -1,0 +1,49 @@
+{
+  "services": [
+    {
+      "id": 1,
+      "title": "Search Engine Optimization (SEO)",
+      "tags": ["Target Audience", "Data Insights", "Keyword Manager"],
+       "bg": "bg-purple-500",
+      "iconUrl": "🔍"
+      
+     
+    },
+    {
+      "id": 2,
+      "title": "Social Media Marketing",
+      "tags": ["Content Creation", "Facebook Ads", "Instagram Ads"],
+       "bg": "bg-black",
+      "iconUrl": "📱"
+    },
+    {
+      "id": 3,
+      "title": "Conversion Rate Optimization (CRO)",
+      "tags": ["Increased ROI", "Report Analysis", "Research"],
+      "bg": "bg-purple-500",
+      "iconUrl": "📈"
+      
+    },
+    {
+      "id": 4,
+      "title": "Web Design & Web Development",
+      "tags": ["UI/UX", "Front-end Development", "Responsive Design"],
+       "bg": "bg-black",
+      "iconUrl": "🛠️"
+    },
+    {
+      "id": 5,
+      "title": "AI - Powered Analytics",
+      "tags": ["Generate Insights", "Automate Processes", "Deliver Predictions"],
+      "bg": "bg-purple-500",
+      "iconUrl": "📊"
+    },
+    {
+      "id": 6,
+      "title": "Paid Social Advertising",
+      "tags": ["Sponsored posts", "Ad performance", "Ad optimization"],
+      "bg": "bg-black",
+      "iconUrl": "📢"
+    }
+  ]
+}
