@@ -489,7 +489,7 @@ const Home = () => {
 
             </div>
             <div className="seventh-container text-center">
-                <img src={head} className="inline-block w-[70rem] h-[130px] m-[90px]" alt="Snive Logo" />
+                <img src={head} className="inline-block w-[80rem] h-[140px] ml-[-20px] mt-[90px] mb-[90px]" alt="Snive Logo" />
             </div>
 
             <div className="eighth-container text-center">
