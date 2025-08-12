@@ -161,13 +161,13 @@ const Home = () => {
 
     return (
         <div>
-            <div className="font-sans min-h-screen text-white  bg-[radial-gradient(circle_at_bottom_left,rgba(130,0,255,0.2)_0%,transparent_40%),linear-gradient(160deg,#0a0014_0%,#1b0033_100%)] px-[3rem]">
-                <nav className="flex justify-between items-center pt-[1.5rem]">
+            <div className="font-sans min-h-screen text-white  bg-[radial-gradient(circle_at_bottom_left,rgba(130,0,255,0.2)_0%,transparent_40%),linear-gradient(160deg,#0a0014_0%,#1b0033_100%)]  px-[3rem]  sm:scale-100 scale-[1] origin-top">
+                <nav className="flex justify-between items-center  pt-[1.5rem]">
                     <div className="flex items-center gap-2">
                         <img src={logo} alt="Snive Logo" className="h-[32px] w-[32px]" />
                         <span className="font-[800] text-[1.5rem]">Snive</span>
                     </div>
-                    <ul className="flex gap-[1.8rem] list-none">
+                    <ul className="flex gap-[1.8rem] list-none ">
                         <li>PRODUCT</li>
                         <li>SOLUTION</li>
                         <li>COMPANY</li>
